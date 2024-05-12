@@ -14,9 +14,7 @@ public class TableCreationService {
     @Transactional
     public boolean tableExists(String tableName) {
         String query = "SELECT count(*) FROM information_schema.`tables` WHERE table_name = ?";
-        Long count = (Long) em.createNativeQuery(query)
-                .setParameter(1, tableName)
-                .getSingleResult();
+        Long count = (Long) em.createNativeQuery(query).setParameter(1, tableName).getSingleResult();
         return count > 0;
     }
 
