@@ -8,11 +8,15 @@ group = 'com.tefaz'
 version = '0.0.1'
 
 java {
-    sourceCompatibility = '17'
+    sourceCompatibility = '17' // OpenLogic-OpenJDK (build 17.0.8+7) was specifically used for this project
 }
 
 repositories {
     mavenCentral()
+}
+
+wrapper {
+    distributionUrl = 'https://services.gradle.org/distributions/gradle-8.3-bin.zip' // gradle 8.3 was used
 }
 
 dependencies {
